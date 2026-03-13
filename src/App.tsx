@@ -8,6 +8,7 @@ import { Experience } from './components/Experience';
 import { Achievements } from './components/Achievements';
 import { Skills } from './components/Skills';
 import { Education } from './components/Education';
+import { Chatbot } from './components/Chatbot';
 import { resumeData } from './data';
 
 export default function App() {
@@ -55,6 +56,7 @@ export default function App() {
                 </p>
               </div>
             </footer>
+            <Chatbot />
           </div>
         )}
       </AnimatePresence>
