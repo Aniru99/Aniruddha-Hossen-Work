@@ -80,7 +80,8 @@ export const resumeData = {
     {
       "degree": "Higher Secondary, Science",
       "institution": "Santragachi kedarnath Institution",
-      "dates": "2016 – 2018"
+      "dates": "2016 – 2018",
+      "score": "88%"
     }
   ],
   "certifications": [

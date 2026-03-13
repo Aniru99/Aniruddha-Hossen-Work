@@ -4,7 +4,13 @@ import { Briefcase, Calendar, MapPin, ChevronDown, ChevronUp, TrendingUp } from 
 import { resumeData } from '../data';
 
 export const Experience: React.FC = () => {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+  const [expandedIndices, setExpandedIndices] = useState<number[]>(resumeData.experience.map((_, i) => i));
+
+  const toggleExpand = (index: number) => {
+    setExpandedIndices(prev => 
+      prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
+    );
+  };
 
   return (
     <section id="experience" className="py-24 px-6 max-w-5xl mx-auto">
@@ -29,9 +35,9 @@ export const Experience: React.FC = () => {
             className="group"
           >
             <div
-              onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
+              onClick={() => toggleExpand(index)}
               className={`p-6 rounded-2xl border transition-all cursor-pointer ${
-                expandedIndex === index
+                expandedIndices.includes(index)
                   ? 'bg-white/10 border-white/20'
                   : 'bg-white/5 border-white/5 hover:border-white/10'
               } backdrop-blur-md`}
@@ -53,12 +59,12 @@ export const Experience: React.FC = () => {
                     <MapPin className="w-4 h-4 text-accent/60" />
                     {exp.location}
                   </div>
-                  {expandedIndex === index ? <ChevronUp className="w-5 h-5 text-accent" /> : <ChevronDown className="w-5 h-5" />}
+                  {expandedIndices.includes(index) ? <ChevronUp className="w-5 h-5 text-accent" /> : <ChevronDown className="w-5 h-5" />}
                 </div>
               </div>
 
               <AnimatePresence>
-                {expandedIndex === index && (
+                {expandedIndices.includes(index) && (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
