@@ -97,32 +97,32 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 1 }}
-          className="relative max-w-4xl mx-auto p-8 md:p-12 rounded-[2rem] border border-white/5 bg-white/[0.01] backdrop-blur-sm group hover:border-white/10 transition-colors duration-500"
+          className="relative max-w-4xl mx-auto pt-14 pb-10 px-6 md:p-12 rounded-[2rem] border border-white/5 bg-white/[0.01] backdrop-blur-sm group hover:border-white/10 transition-colors duration-500"
         >
           {/* Section Label */}
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-6 py-1 bg-[#020617] border border-white/10 rounded-full shadow-xl">
-            <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-white/40 group-hover:text-accent transition-colors duration-500">
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 md:px-6 py-1.5 bg-[#020617] border border-white/10 rounded-full shadow-xl whitespace-nowrap">
+            <span className="text-[8px] md:text-[10px] font-bold tracking-[0.3em] md:tracking-[0.4em] uppercase text-white/40 group-hover:text-accent transition-colors duration-500">
               Core Infrastructure Stack
             </span>
           </div>
           
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-x-8 gap-y-12">
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-x-4 md:gap-x-8 gap-y-10 md:gap-y-12">
             {techStack.map((tech) => (
               <div key={tech.name} className="group relative flex flex-col items-center gap-3">
                 <div 
-                  className="w-7 h-7 md:w-9 md:h-9 transition-all duration-500 grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]" 
+                  className="w-7 h-7 md:w-9 md:h-9 transition-all duration-500 grayscale-0 opacity-100 md:grayscale md:opacity-60 md:group-hover:grayscale-0 md:group-hover:opacity-100 group-hover:scale-110 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]" 
                   style={{ color: tech.color }}
                 >
                   <tech.Icon size="100%" />
                 </div>
                 {/* Always visible but subtle label */}
-                <span className="text-[9px] font-bold tracking-widest uppercase text-white/20 group-hover:text-white/60 transition-all duration-300 text-center">
+                <span className="text-[9px] font-bold tracking-widest uppercase text-white/60 md:text-white/20 md:group-hover:text-white/60 transition-all duration-300 text-center">
                   {tech.name}
                 </span>
                 
                 {/* Glow Effect on Hover */}
                 <div 
-                  className="absolute inset-0 -z-10 blur-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"
+                  className="absolute inset-0 -z-10 blur-2xl opacity-20 md:opacity-0 md:group-hover:opacity-20 transition-opacity duration-500"
                   style={{ backgroundColor: tech.color }}
                 />
               </div>
