@@ -37,8 +37,12 @@ export const Chatbot: React.FC = () => {
     setIsLoading(true);
 
     try {
+      if (!process.env.GEMINI_API_KEY) {
+        throw new Error("GEMINI_API_KEY is not set. Please add it to your environment variables.");
+      }
+
       const response = await ai.models.generateContent({
-        model: "gemini-2.0-flash",
+        model: "gemini-3-flash-preview",
         contents: [
           {
             role: "user",
