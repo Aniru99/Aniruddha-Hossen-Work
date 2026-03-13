@@ -1,7 +1,32 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowDown, Linkedin } from 'lucide-react';
+import { SiDocker, SiKubernetes, SiTerraform, SiGooglecloud, SiRedhatopenshift, SiLinux, SiJenkins, SiPython, SiGo, SiGit, SiGooglegemini } from 'react-icons/si';
+import { FaAws } from 'react-icons/fa';
+import { VscAzure } from 'react-icons/vsc';
+import { IconType } from 'react-icons';
 import { resumeData } from '../data';
+
+interface TechItem {
+  name: string;
+  Icon: IconType;
+  color: string;
+}
+
+const techStack: TechItem[] = [
+  { name: 'AWS', Icon: FaAws, color: '#FF9900' },
+  { name: 'Azure', Icon: VscAzure, color: '#0089D6' },
+  { name: 'OpenShift RedHat', Icon: SiRedhatopenshift, color: '#EE0000' },
+  { name: 'Linux', Icon: SiLinux, color: '#FCC624' },
+  { name: 'Docker', Icon: SiDocker, color: '#2496ED' },
+  { name: 'Kubernetes', Icon: SiKubernetes, color: '#326CE5' },
+  { name: 'Jenkins', Icon: SiJenkins, color: '#D24939' },
+  { name: 'Terraform', Icon: SiTerraform, color: '#7B42BC' },
+  { name: 'Python', Icon: SiPython, color: '#3776AB' },
+  { name: 'Go', Icon: SiGo, color: '#00ADD8' },
+  { name: 'Git', Icon: SiGit, color: '#F05032' },
+  { name: 'GenAI', Icon: SiGooglegemini, color: '#8E75FF' },
+];
 
 export const Hero: React.FC = () => {
   const scrollToExperience = () => {
@@ -9,68 +34,102 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen px-6 pt-20 overflow-hidden">
-      <div className="z-10 max-w-4xl text-center">
+    <section className="relative flex flex-col items-center justify-center min-h-screen px-6 pt-32 pb-20 overflow-hidden">
+      {/* Background Decorative Element */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="z-10 max-w-5xl text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-block px-4 py-1 mb-6 text-xs font-medium tracking-widest uppercase border rounded-full border-white/10 bg-white/5 backdrop-blur-sm text-white/60"
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[10px] font-bold tracking-[0.2em] uppercase border rounded-full border-white/10 bg-white/5 backdrop-blur-md text-accent"
         >
+          <span className="w-1 h-1 rounded-full bg-accent animate-pulse" />
           {resumeData.basics.title}
         </motion.div>
         
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-6 text-2xl font-bold tracking-tight text-white md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-white via-accent to-secondary"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-8 text-3xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl"
         >
-          Aniruddha Hossen
+          Aniruddha <span className="text-white/40">Hossen</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="max-w-4xl mx-auto mb-10 text-xs leading-relaxed text-white/60 md:text-sm"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="max-w-2xl mx-auto mb-12 text-sm leading-relaxed text-white/50 md:text-base font-light"
         >
-          {resumeData.basics.summary}
+          Lead Software Engineer specializing in <span className="text-white/90">Cloud Infrastructure</span>, 
+          <span className="text-white/90"> Kubernetes, Networking</span>, and <span className="text-white/90">Multi-cloud Platform Engineering</span>. 
+          Driving engineering productivity through AI-assisted development.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col items-center justify-center gap-4 sm:flex-row"
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="flex flex-col items-center justify-center gap-6 sm:flex-row mb-24"
         >
           <button
             onClick={scrollToExperience}
-            className="flex items-center gap-2 px-8 py-4 font-medium transition-all bg-white rounded-full text-black hover:bg-white/90 group"
+            className="px-10 py-4 font-semibold transition-all bg-white rounded-full text-black hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
           >
             View Experience
-            <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-1" />
           </button>
           <a
             href={resumeData.basics.links[0].url}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 px-8 py-4 font-medium transition-all border rounded-full border-white/10 text-white hover:bg-white/5 backdrop-blur-sm group"
+            className="flex items-center gap-2 px-10 py-4 font-semibold transition-all border rounded-full border-white/10 text-white hover:bg-white/5 backdrop-blur-sm group"
           >
-            Connect on LinkedIn
-            <Linkedin className="w-4 h-4 transition-transform group-hover:scale-110" />
+            LinkedIn
+            <Linkedin className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" />
           </a>
         </motion.div>
-      </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-      >
-        <div className="w-[1px] h-12 bg-gradient-to-b from-white/40 to-transparent" />
-      </motion.div>
+        {/* Enhanced Tech Stack Section */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 1 }}
+          className="relative max-w-4xl mx-auto p-8 md:p-12 rounded-[2rem] border border-white/5 bg-white/[0.01] backdrop-blur-sm group hover:border-white/10 transition-colors duration-500"
+        >
+          {/* Section Label */}
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-6 py-1 bg-[#020617] border border-white/10 rounded-full shadow-xl">
+            <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-white/40 group-hover:text-accent transition-colors duration-500">
+              Core Infrastructure Stack
+            </span>
+          </div>
+          
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-x-8 gap-y-12">
+            {techStack.map((tech) => (
+              <div key={tech.name} className="group relative flex flex-col items-center gap-3">
+                <div 
+                  className="w-7 h-7 md:w-9 md:h-9 transition-all duration-500 grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]" 
+                  style={{ color: tech.color }}
+                >
+                  <tech.Icon size="100%" />
+                </div>
+                {/* Always visible but subtle label */}
+                <span className="text-[9px] font-bold tracking-widest uppercase text-white/20 group-hover:text-white/60 transition-all duration-300 text-center">
+                  {tech.name}
+                </span>
+                
+                {/* Glow Effect on Hover */}
+                <div 
+                  className="absolute inset-0 -z-10 blur-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"
+                  style={{ backgroundColor: tech.color }}
+                />
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 };

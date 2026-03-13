@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Trophy, Star, Award, Zap, ShieldCheck, Cpu, CheckCircle } from 'lucide-react';
+import { Trophy, Star, Award, Zap, ShieldCheck, Cpu, CheckCircle, ExternalLink } from 'lucide-react';
 import { resumeData } from '../data';
 
 export const Achievements: React.FC = () => {
@@ -33,7 +33,7 @@ export const Achievements: React.FC = () => {
     },
     {
       title: "Cloud Infrastructure Specialist",
-      context: "Certified in AWS (CLF-C02), Azure (AZ-104, AZ-900, AI-900) with 3.5+ years of multi-cloud experience.",
+      context: "Certified in AWS (CLF-C02), Azure (AZ-104, AZ-900, AI-900), and Google Cloud (ACE) with 3.5+ years of multi-cloud experience.",
       type: "specialist",
       color: "from-[#00264d] to-[#000d1a]",
       accent: "text-[#0080ff]",
@@ -44,6 +44,16 @@ export const Achievements: React.FC = () => {
   return (
     <section id="impact" className="py-24 px-6 bg-[#030303]">
       <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <h2 className="text-2xl font-bold text-white md:text-4xl mb-4">Impact and Achievements</h2>
+          <div className="w-20 h-1 bg-accent rounded-full" />
+        </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {visualAchievements.map((achievement, index) => (
             <motion.div
@@ -87,10 +97,21 @@ export const Achievements: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="p-4 rounded-xl border border-white/5 bg-white/5 flex items-center gap-3 hover:bg-white/10 transition-all group"
+              className="p-4 rounded-xl border border-white/5 bg-white/5 flex flex-col gap-3 hover:bg-white/10 transition-all group"
             >
-              <CheckCircle className="w-5 h-5 text-accent/40 group-hover:text-accent transition-colors" />
-              <span className="text-white/80 text-sm font-medium">{cert}</span>
+              <div className="flex items-center gap-3">
+                <CheckCircle className="w-5 h-5 text-accent/40 group-hover:text-accent transition-colors shrink-0" />
+                <span className="text-white/80 text-sm font-medium">{cert.name}</span>
+              </div>
+              <a 
+                href={cert.url}
+                target="_blank"
+                rel="noreferrer"
+                className="text-[10px] font-bold text-accent/60 hover:text-accent uppercase tracking-widest flex items-center gap-1 transition-colors ml-8"
+              >
+                See Credential
+                <ExternalLink className="w-3 h-3" />
+              </a>
             </motion.div>
           ))}
         </div>

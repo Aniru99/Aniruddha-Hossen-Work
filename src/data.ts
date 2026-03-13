@@ -17,7 +17,7 @@ export const resumeData = {
       "role": "Lead Software Engineer",
       "dates": "Jan 2026 – Present",
       "location": "Kolkata, India",
-      "client": "IBM MCSP",
+      "project": "IBM MCSP",
       "bullets": [
         "Developed and maintained Kubernetes controllers and add-on components for IBM MCSP platform, implementing reconciliation logic and lifecycle management for cluster networking resources.",
         "Leading networking feature development and production reliability initiatives for the IBM MCSP multi-cloud platform across Azure and AWS environments.",
@@ -31,7 +31,7 @@ export const resumeData = {
       "role": "Senior Software Engineer",
       "dates": "Jun 2024 – Dec 2025",
       "location": "Kolkata, India",
-      "client": "IBM MCSP",
+      "project": "IBM MCSP",
       "bullets": [
         "Implemented AWS cluster migration workflows using velero, enabling namespace-scoped backup and restore across environments for disaster recovery and environment transitions.",
         "Designed and enhanced networking automation using Terraform for Azure infrastructure, improving deployment consistency and reducing manual provisioning effort by ~40%.",
@@ -42,18 +42,18 @@ export const resumeData = {
       "metrics": ["40% reduction in manual provisioning"]
     },
     {
-      "company": "IBM Netezza",
+      "company": "Persistent Systems",
       "role": "Software Engineer",
       "dates": "Jun 2022 – Jun 2024",
       "location": "Nagpur, India",
-      "client": "IBM Netezza",
+      "project": "IBM Netezza",
       "bullets": [
         "Managed and optimized containerized workloads across Azure AKS and AWS EKS clusters, ensuring efficient resource utilization, scalability, and production stability.",
         "Performed real-time Kubernetes troubleshooting (pods, nodes, networking, resource constraints), reducing cluster downtime and improving operational reliability.",
         "Containerized legacy applications using Docker, optimized Dockerfiles during Python upgrade (3.9 → 3.11), reducing image size by 30% and improving CI/CD build performance.",
         "Developed and refactored Python-based APIs and backend services, adhering to PEP8 standards and improving code maintainability in a large legacy codebase."
       ],
-      "metrics": ["30% image size reduction", "Resolved 50+ Docker issues"]
+      "metrics": ["30% image size reduction", "Resolved 50+ docker and kubernetes issues"]
     }
   ],
   "achievements": [
@@ -75,7 +75,13 @@ export const resumeData = {
       "degree": "Bachelor of Technology (B.Tech) in Computer Science and Engineering",
       "institution": "Maulana Abul Kalam Azad University of Technology, West Bengal",
       "dates": "2018 – 2022",
-      "score": "CGPA: 9.09"
+      "score": "CGPA: 9.09",
+      "project": {
+        "name": "tindog - a dating website for dogs",
+        "url": "https://aniru99.github.io/tindog/",
+        "description": "Responsive website using Bootstrap (Carousel, Card, Buttons, Navbar).",
+        "skills": "Bootstrap · CSS · JS · HTML · Git"
+      }
     },
     {
       "degree": "Higher Secondary, Science",
@@ -85,12 +91,30 @@ export const resumeData = {
     }
   ],
   "certifications": [
-    "AWS Certified Cloud Practitioner (CLF-C02)",
-    "Microsoft Certified: Azure Administrator Associate (AZ-104)",
-    "Microsoft Certified: Azure Fundamentals (AZ-900)",
-    "Microsoft Certified: Azure AI Fundamentals (AI-900)",
-    "GenAI For Practitioner course (Persistent University)",
-    "Python for Everybody Specialization (Coursera - University of Michigan)"
+    {
+      "name": "AWS Certified Cloud Practitioner (CLF-C02)",
+      "url": "https://cp.certmetrics.com/amazon/en/public/verify/credential/71f5752dfd5648ddb1edf95ff18d24bf"
+    },
+    {
+      "name": "Microsoft Certified: Azure Administrator Associate (AZ-104)",
+      "url": "https://learn.microsoft.com/en-us/users/skaniruddhahossen-8879/credentials/9ddfe37625e2d404?ref=https%3A%2F%2Fwww.linkedin.com%2F"
+    },
+    {
+      "name": "Microsoft Certified: Azure Fundamentals (AZ-900)",
+      "url": "https://learn.microsoft.com/en-us/users/skaniruddhahossen-8879/credentials/5b7df2c41f0aa236?ref=https%3A%2F%2Fwww.linkedin.com%2F"
+    },
+    {
+      "name": "Microsoft Certified: Azure AI Fundamentals (AI-900)",
+      "url": "https://learn.microsoft.com/api/credentials/share/en-us/SkAniruddhaHossen-8879/E159FE2D4156169A?sharingId=3327B71AE5996D1F"
+    },
+    {
+      "name": "GenAI For Practitioner course (Persistent University)",
+      "url": "https://www.linkedin.com/posts/aniruddha-hossen_genai-certificate-from-persistent-university-activity-7141043131256414208-L1rm/?utm_source=share&utm_medium=member_desktop"
+    },
+    {
+      "name": "Google Cloud Associate Cloud Engineer (ACE)",
+      "url": "https://www.credly.com/badges/a1eb5acd-aad5-4887-b3c8-0d58f214c704/public_url"
+    }
   ],
   "extra": [
     "Languages: English (Full Professional)",

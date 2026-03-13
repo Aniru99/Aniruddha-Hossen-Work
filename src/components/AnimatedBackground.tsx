@@ -67,9 +67,9 @@ export const AnimatedBackground: React.FC = () => {
         canvas.width / 2, canvas.height / 2, 0,
         canvas.width / 2, canvas.height / 2, canvas.width
       );
-      gradient.addColorStop(0, '#0a0a1a');
-      gradient.addColorStop(0.5, '#050505');
-      gradient.addColorStop(1, '#000000');
+      gradient.addColorStop(0, '#0f172a'); // Deep slate blue
+      gradient.addColorStop(0.5, '#020617'); // Very dark blue
+      gradient.addColorStop(1, '#000000'); // Black edges
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 

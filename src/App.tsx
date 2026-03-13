@@ -14,7 +14,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
 
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black">
+    <div className="min-h-screen bg-[#020617] text-white selection:bg-white selection:text-black">
       <AnimatePresence mode="wait">
         {loading ? (
           <SplashLoader key="loader" onComplete={() => setLoading(false)} />
