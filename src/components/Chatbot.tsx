@@ -4,7 +4,11 @@ import { MessageSquare, X, Send, User, Bot, Loader2, Linkedin, Mail, Briefcase, 
 import { GoogleGenAI } from "@google/genai";
 import { resumeData } from '../data';
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
+// Use a getter to avoid top-level crashes and handle missing keys gracefully
+const getAI = () => {
+  const apiKey = process.env.GEMINI_API_KEY || "";
+  return new GoogleGenAI({ apiKey });
+};
 
 interface Message {
   role: 'user' | 'bot';
@@ -41,6 +45,7 @@ export const Chatbot: React.FC = () => {
         throw new Error("GEMINI_API_KEY is not set. Please add it to your environment variables.");
       }
 
+      const ai = getAI();
       const response = await ai.models.generateContent({
         model: "gemini-3-flash-preview",
         contents: [
